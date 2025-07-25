@@ -1,52 +1,29 @@
-# MERN Stack Capstone Project
+# Task Management Platform
+  
+This is a project built with [Chef](https://chef.convex.dev) using [Convex](https://convex.dev) as its backend.
+ You can find docs about Chef with useful information like how to deploy to production [here](https://docs.convex.dev/chef).
+  
+This project is connected to the Convex deployment named [`shocking-orca-23`](https://dashboard.convex.dev/d/shocking-orca-23).
+  
+## Project structure
+  
+The frontend code is in the `app` directory and is built with [Vite](https://vitejs.dev/).
+  
+The backend code is in the `convex` directory.
+  
+`npm run dev` will start the frontend and backend servers.
 
-This assignment focuses on designing, developing, and deploying a comprehensive full-stack MERN application that showcases all the skills you've learned throughout the course.
+## App authentication
 
-## Assignment Overview
+Chef apps use [Convex Auth](https://auth.convex.dev/) with Anonymous auth for easy sign in. You may wish to change this before deploying your app.
 
-You will:
-1. Plan and design a full-stack MERN application
-2. Develop a robust backend with MongoDB, Express.js, and Node.js
-3. Create an interactive frontend with React.js
-4. Implement testing across the entire application
-5. Deploy the application to production
+## Developing and deploying your app
 
-## Getting Started
+Check out the [Convex docs](https://docs.convex.dev/) for more information on how to develop with Convex.
+* If you're new to Convex, the [Overview](https://docs.convex.dev/understanding/) is a good place to start
+* Check out the [Hosting and Deployment](https://docs.convex.dev/production/) docs for how to deploy your app
+* Read the [Best Practices](https://docs.convex.dev/understanding/best-practices/) guide for tips on how to improve you app further
 
-1. Accept the GitHub Classroom assignment
-2. Clone the repository to your local machine
-3. Follow the instructions in the `Week8-Assignment.md` file
-4. Plan, develop, and deploy your capstone project
+## HTTP API
 
-## Files Included
-
-- `Week8-Assignment.md`: Detailed assignment instructions
-
-## Requirements
-
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git and GitHub account
-- Accounts on deployment platforms (Render/Vercel/Netlify/etc.)
-
-## Project Ideas
-
-The `Week8-Assignment.md` file includes several project ideas, but you're encouraged to develop your own idea that demonstrates your skills and interests.
-
-## Submission
-
-Your project will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
-
-1. Commit and push your code regularly
-2. Include comprehensive documentation
-3. Deploy your application and add the live URL to your README.md
-4. Create a video demonstration and include the link in your README.md
-
-## Resources
-
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [GitHub Classroom Guide](https://docs.github.com/en/education/manage-coursework-with-github-classroom) 
+User-defined http routes are defined in the `convex/router.ts` file. We split these routes into a separate file from `convex/http.ts` to allow us to prevent the LLM from modifying the authentication routes.
